@@ -42,3 +42,36 @@ async function sendCampaign(registros, baseMessage) {
 }
 
 module.exports = { sendCampaign };
+
+
+// Optimizar el proceso de envío
+// const sendMessagesInBatches = async (records, batchSize = 10) => {
+//   let batch = [];
+//   let results = [];
+  
+//   for (let i = 0; i < records.length; i++) {
+//     batch.push(records[i]);
+
+//     if (batch.length === batchSize || i === records.length - 1) {
+//       // Enviar lote de mensajes
+//       const response = await sendBatch(batch);
+//       results.push(response);
+//       batch = [];  // Limpiar el lote
+//     }
+//   }
+
+//   return results;
+// };
+
+// const sendBatch = async (batch) => {
+//   const response = await fetch('/api/send', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(batch),
+//   });
+
+//   return response.json();
+// };
+
+// // Llamar con los registros completos
+// sendMessagesInBatches(records);
